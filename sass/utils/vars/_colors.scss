@@ -1,0 +1,15 @@
+$colors: (
+  'primary-text': #212121,
+  'secondary-text': #757575,
+  'accent': #2196f3,
+  'black': #000,
+  'white': #fff,
+  'background': #f5f4fa,
+  'hero-bg': #2f303a,
+  'social-link': #afb1b8,
+  'btn-hover': #188ce8,
+);
+
+@function getColor($key) {
+  @return map-get($colors, $key);
+}

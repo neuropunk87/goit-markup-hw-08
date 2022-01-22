@@ -1,0 +1,67 @@
+%member-position {
+  font-size: 16px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
+.team {
+  background-color: getColor('background');
+  &__title {
+    @extend %work-team-clients-Title;
+  }
+  &__list {
+    margin-bottom: calc(-1 * 30px);
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 0;
+    }
+
+    @media screen and (min-width: 1200px) {
+      flex-wrap: nowrap;
+    }
+  }
+  &__item {
+    background-color: getColor('white');
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+    margin-bottom: $margin-gap;
+
+    @media screen and (min-width: 768px) {
+      flex-basis: calc((100% - 30px) / 2);
+
+      &:nth-child(odd) {
+        margin-right: $margin-gap;
+      }
+
+      &:nth-last-child(-n + 2) {
+        margin-bottom: 0;
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+      flex-basis: calc((100% - 3 * 30px) / 4);
+      margin-bottom: 0;
+
+      &:not(:last-child) {
+        margin-right: $margin-gap;
+      }
+    }
+  }
+  &__text {
+    padding: $margin-gap 0;
+  }
+  &__member {
+    @extend %member-position;
+    color: getColor('primary-text');
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  &__position {
+    @extend %member-position;
+    margin-bottom: 16px;
+  }
+}

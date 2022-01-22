@@ -1,0 +1,213 @@
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 100%;
+
+  @media screen and (max-width: 767px) {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    padding: 48px 40px;
+    background-color: getColor('white');
+    overflow-y: scroll;
+  }
+  &.is-open {
+    display: flex;
+    overflow-y: hidden;
+    z-index: 1;
+  }
+}
+
+.burger-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  z-index: 5;
+  transition: fill $duration $timing-function;
+  &:hover {
+    fill: getColor('accent');
+  }
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+  & &__close {
+    display: none;
+  }
+  &.is-open &__close {
+    display: block;
+  }
+  &.is-open &__open {
+    display: none;
+  }
+}
+
+%header-links {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color $duration $timing-function;
+}
+
+.nav {
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+  &__item:not(:last-child) {
+    margin-bottom: 32px;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 0;
+      margin-right: 50px;
+    }
+  }
+  &__link {
+    position: relative;
+    @extend %header-links;
+    font-size: 40px;
+    line-height: 1.18;
+    color: getColor('primary-text');
+
+    @media screen and (min-width: 768px) {
+      font-size: 14px;
+      line-height: 1.14;
+      padding: 32px 0;
+    }
+    &:hover,
+    &:focus {
+      @media screen and (min-width: 768px) {
+        color: getColor('accent');
+      }
+    }
+    &--current {
+      color: getColor('accent');
+    }
+    &--current::after {
+      @media screen and (min-width: 768px) {
+        position: absolute;
+        content: '';
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 4px;
+        background-color: getColor('accent');
+        border-radius: 2px;
+      }
+    }
+  }
+}
+
+.contacts {
+  margin-top: auto;
+  margin-bottom: 64px;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0;
+  }
+
+  @media screen and (min-width: 1200px) {
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  &__item {
+    @extend %header-links;
+    font-size: 24px;
+    line-height: 1.17;
+    color: getColor('secondary-text');
+
+    @media screen and (min-width: 768px) {
+      font-size: 14px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      font-size: 12px;
+      line-height: 1.14;
+    }
+    &:first-child {
+      font-size: 34px;
+      line-height: 1.18;
+      color: getColor('accent');
+      margin-bottom: 32px;
+
+      @media screen and (min-width: 768px) {
+        font-size: 12px;
+        margin-top: 10px;
+        margin-bottom: 0;
+        color: getColor('secondary-text');
+      }
+
+      @media screen and (min-width: 1200px) {
+        margin-top: 0;
+        margin-left: 30px;
+      }
+    }
+  }
+  &__link {
+    color: inherit;
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+      align-items: center;
+    }
+
+    @media screen and (min-width: 1200px) {
+      padding: 32px 0;
+    }
+    &:hover,
+    &:focus {
+      @media screen and (min-width: 768px) {
+        color: getColor('accent');
+      }
+    }
+  }
+  &__icon {
+    display: none;
+    transition: fill $duration $timing-function;
+
+    @media screen and (min-width: 768px) {
+      display: block;
+      margin-right: 10px;
+      fill: getColor('secondary-text');
+    }
+  }
+  &__link:hover &__icon,
+  &__link:focus &__icon {
+    fill: getColor('accent');
+  }
+}
+
+.socials {
+  display: flex;
+  @extend %header-links;
+  font-size: 18px;
+  line-height: 1.22;
+  color: getColor('accent');
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    &:not(:last-child)::after {
+      display: inline-block;
+      content: '';
+      width: 1px;
+      height: 22px;
+      margin: 0 10px;
+      background-color: getColor('secondary-text');
+    }
+  }
+}

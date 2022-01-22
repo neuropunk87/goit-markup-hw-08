@@ -1,0 +1,23 @@
+@import './utils/vars/colors';
+@import './utils/vars/fonts';
+@import './utils/vars/others';
+
+@import './base/reset';
+@import './base/base-styles';
+
+@import './components/buttons';
+@import './components/modal';
+@import './components/modal-form';
+
+@import './layout/header';
+@import './layout/logo';
+@import './layout/nav-menu';
+@import './layout/hero';
+@import './layout/advantage';
+@import './layout/work';
+@import './layout/team';
+@import './layout/media';
+@import './layout/clients';
+@import './layout/footer';
+@import './layout/portfolio-filter';
+@import './layout/portfolio';

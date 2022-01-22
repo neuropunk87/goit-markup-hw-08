@@ -1,0 +1,127 @@
+.footer {
+  background-color: getColor('hero-bg');
+  padding: 60px 0;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      align-items: baseline;
+    }
+    &:last-child {
+      flex-basis: 100%;
+    }
+  }
+  &__address {
+    margin-bottom: 60px;
+
+    @media screen and (min-width: 1200px) {
+      margin-right: 70px;
+      margin-bottom: 30px;
+    }
+  }
+  &__list {
+    text-align: center;
+
+    @media screen and (min-width: 1200px) {
+      text-align: start;
+    }
+  }
+  &__item:not(:last-child) {
+    margin-bottom: 9px;
+  }
+  &__link {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    color: getColor('white');
+    transition: color $duration $timing-function;
+    &--transparent {
+      color: rgba(255, 255, 255, 0.6);
+    }
+    &:hover,
+    &:focus {
+      color: getColor('accent');
+    }
+  }
+  .join-us {
+    @media screen and (min-width: 480px) {
+      margin-bottom: 60px;
+    }
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 0;
+    }
+    &__title {
+      color: getColor('white');
+      margin-bottom: 20px;
+      @extend %advantage-work-footer-Uppercase;
+      text-align: center;
+
+      @media screen and (min-width: 1200px) {
+        text-align: start;
+      }
+    }
+  }
+  .notification {
+    @media screen and (min-width: 1200px) {
+      margin-left: auto;
+    }
+    .subscription {
+      color: getColor('white');
+      margin-bottom: 20px;
+      @extend %advantage-work-footer-Uppercase;
+      text-align: center;
+
+      @media screen and (min-width: 1200px) {
+        text-align: start;
+      }
+    }
+    .subscribe-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @media screen and (min-width: 1200px) {
+        flex-direction: row;
+      }
+      &__label {
+        margin-bottom: 20px;
+
+        @media screen and (min-width: 1200px) {
+          margin-right: 12px;
+          margin-bottom: 0;
+        }
+      }
+      &__input {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 1.25;
+        letter-spacing: 0.03em;
+        width: 450px;
+        padding: 14px;
+        background-color: transparent;
+        color: rgba(255, 255, 255, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 4px;
+        transition: border-color $duration $timing-function, fill $duration $timing-function;
+        &:focus {
+          outline: none;
+          border-color: getColor('accent');
+          fill: getColor('accent');
+        }
+
+        @media screen and (min-width: 1200px) {
+          width: 358px;
+          padding: 14px;
+        }
+      }
+    }
+  }
+}

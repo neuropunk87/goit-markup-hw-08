@@ -1,0 +1,29 @@
+@mixin custom-flex-container($justify, $align, $direction, $wrap) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+}
+
+@mixin centered-X-content {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin centered-Y-content {
+  display: flex;
+  align-items: center;
+}
+
+@mixin centered-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin centered-text {
+  text-align: center;
+  line-height: 100%;
+  vertical-align: middle;
+}

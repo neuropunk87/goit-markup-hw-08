@@ -1,0 +1,8 @@
+$font-family: (
+  'primary-font': Roboto,
+  'secondary-font': Raleway,
+);
+
+@function getFont($key) {
+  @return map-get($font-family, $key);
+}
