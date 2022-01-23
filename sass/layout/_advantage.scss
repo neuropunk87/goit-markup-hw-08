@@ -49,6 +49,10 @@
     color: getColor('primary-text');
     @extend %advantage-work-footer-Uppercase;
     margin-bottom: 10px;
+
+    @media screen and (max-width: 767px) {
+      text-align: center;
+    }
   }
   &__text {
     font-size: 14px;

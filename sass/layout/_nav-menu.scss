@@ -128,12 +128,12 @@
     color: getColor('secondary-text');
 
     @media screen and (min-width: 768px) {
-      font-size: 14px;
+      font-size: 12px;
+      line-height: 1.14;
     }
 
     @media screen and (min-width: 1200px) {
-      font-size: 12px;
-      line-height: 1.14;
+      font-size: 14px;
     }
     &:first-child {
       font-size: 34px;

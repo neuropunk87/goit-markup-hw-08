@@ -761,14 +761,14 @@ button {
 
 @media screen and (min-width: 768px) {
   .contacts__item {
-    font-size: 14px;
+    font-size: 12px;
+    line-height: 1.14;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .contacts__item {
-    font-size: 12px;
-    line-height: 1.14;
+    font-size: 14px;
   }
 }
 
@@ -1060,6 +1060,12 @@ button {
 .advantage__title {
   color: #212121;
   margin-bottom: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .advantage__title {
+    text-align: center;
+  }
 }
 
 .advantage__text {
@@ -1416,7 +1422,7 @@ button {
 @media screen and (min-width: 1200px) {
   .footer__address {
     margin-right: 70px;
-    margin-bottom: 30px;
+    margin-bottom: 0;
   }
 }
 
